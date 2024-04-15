@@ -47,12 +47,9 @@ export async function getMovieDetails(movies) {
 }
 
 export function getMovieFromList(imdbNumber) {
-
-    console.log("imdbNumber: "+ imdbNumber)
     const foundItem = movieArray.find((movie) => {
         if(movie) {
             if(movie.imdbID === imdbNumber) {
-                console.log("Found Movie: "+JSON.stringify(movie))
                 return movie
             }
         }

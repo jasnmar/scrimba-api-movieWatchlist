@@ -54,7 +54,6 @@ async function renderMovieCards(basicMovieArray, context) {
         //or the watch list, the button HTML is different. This
         //accounts for that
         const buttonHTML = getCorrectCardButton(context);
-        console.log("buttonHTML", buttonHTML);
         let cardsHTML = "";
         detailMovieArray.forEach((movie) => {
             cardsHTML += renderIndividualCard(movie, buttonHTML);
@@ -74,7 +73,6 @@ async function renderMovieCards(basicMovieArray, context) {
 //a different button. I could probably do some styling tricks,
 //but this seems more obvious
 function getCorrectCardButton(context) {
-    console.log('context', context)
     let html = ""
     if(context==="searchpage") {
         html = `
@@ -90,9 +88,7 @@ function getCorrectCardButton(context) {
 
 //Renders a single card for a movie with the correct button
 function renderIndividualCard(movie, buttonHTML) {
-    console.log('movie', movie)
     const posterHTML = getPoster(movie)
-    console.log('posterHTML', posterHTML)
     const html = `
         <div data-imdbid="${movie.imdbID}" class="movie-card">
             ${posterHTML}
@@ -214,8 +210,6 @@ function addMovieToLocalStorage(imdbId) {
         if(!movieExists) {
             cLocalStorage.push(newItem)
             localStorage.setItem("movieList", JSON.stringify(cLocalStorage))
-        } else {
-            console.log("Movie exists")
         }
     } else {
         localStorage.setItem("movieList", JSON.stringify([newItem]))
