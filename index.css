@@ -130,7 +130,6 @@ h1 {
     min-height: 30px;
     border-radius: 6px 0 0 6px;
     flex-grow: 3;
-    size: 10;
 }
 
 #search:focus {
