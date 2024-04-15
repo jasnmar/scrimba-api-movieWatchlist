@@ -7,22 +7,21 @@ let movieArray = []
 export async function getMovieList() {
     //Get the search term
     let searchTerm = document.getElementById("search").value
-    
-    //TODO: Remove this, here for debugging only
-    if(searchTerm == "") {
-        searchTerm = "Blade Runner"
+    if(searchTerm) {
+        //Replace spaces for the query param
+        searchTerm = searchTerm.replace(" ","+")
+        //Call the API and wait for data
+        const res = await fetch(`http://www.omdbapi.com/?apikey=${key}&s=${searchTerm}`)
+        const data = await res.json()
+        //Set the movie array to the resulst of the search
+        movieArray = data.Search
+        //Get the details of each movie
+        //The basic search doesn't include the plot, which was required
+        //by the design
+        return movieArray
     }
-    //Replace spaces for the query param
-    searchTerm = searchTerm.replace(" ","+")
-    //Call the API and wait for data
-    const res = await fetch(`http://www.omdbapi.com/?apikey=${key}&s=${searchTerm}`)
-    const data = await res.json()
-    //Set the movie array to the resulst of the search
-    movieArray = data.Search
-    //Get the details of each movie
-    //The basic search doesn't include the plot, which was required
-    //by the design
-    return movieArray
+    return []
+
 }
 
 //Gets movie details from the API for all of the movies
