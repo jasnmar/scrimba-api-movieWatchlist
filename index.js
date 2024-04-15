@@ -109,8 +109,8 @@ function renderIndividualCard(movie, buttonHTML) {
                         ${buttonHTML}
                     </button>
                 </div>
-                <div class="plot">
-                    <p>${movie.Plot}
+                <div class="line-clamp">
+                    <p class="plot line-clamp">${movie.Plot}</p>
                 </div>
             </div>
         </div>

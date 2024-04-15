@@ -3,6 +3,8 @@ body, html {
     margin:0;
     box-sizing: border-box;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: auto;
 }
 /* 
 ================
@@ -48,11 +50,16 @@ p {
     font-size: .8rem;
 }
 
-.plot {
-    font-size: .875rem;
+.line-clamp p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+.plot {
+    font-size: .875rem;
+ 
 }
 
 .add-movies-btn {
@@ -69,6 +76,7 @@ header {
     background-color: black;
     background-image: url("./images/header-background.png");
     min-height: 20vh;
+    position: relative;
 }
 
 h1 {
@@ -88,16 +96,16 @@ h1 {
 
 .input-wrapper {
     display:flex;
+    position: relative;
+    top: 6vh;
 }
 
 .input-group {
     display: flex;
     border: 1px solid #777777;
     border-radius: 8px;
-    position: absolute;
-    top: 17vh;
-    margin: 0 4vw;
-    width: 90vw;
+    margin: 0 1vw;
+    width: 100%;
 }
 
 #search, #search-btn {
@@ -117,13 +125,12 @@ h1 {
     background-size: 1.5rem;
     background-position-y: center;
     background-position-x: 4px;
-    margin-right:0px;
     background-repeat: no-repeat;
-    padding: 10px 0px 10px 1.75em;
+    padding: 10px 0px 10px;
     min-height: 30px;
-    min-width: 60vw;
     border-radius: 6px 0 0 6px;
-    flex-grow: 2;
+    flex-grow: 3;
+    size: 10;
 }
 
 #search:focus {
