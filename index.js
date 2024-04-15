@@ -110,7 +110,7 @@ function renderIndividualCard(movie, buttonHTML) {
                     </button>
                 </div>
                 <div class="plot">
-                    <p class="plot">${movie.Plot}
+                    <p>${movie.Plot}
                 </div>
             </div>
         </div>
